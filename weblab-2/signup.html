@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie - Sign Up</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100">
+
+
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
+
+        <a href="index.html"
+           class="text-2xl font-bold text-orange-600">
+            Foodie
+        </a>
+
+        <div class="flex gap-5">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="signin.html"
+               class="text-orange-600">
+                Sign In
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- SIGN UP CARD -->
+<section class="max-w-md mx-auto px-6 py-16">
+
+    <div class="bg-white rounded-xl shadow-lg p-8">
+
+        <h1 class="text-3xl font-bold text-center">
+            Create Account
+        </h1>
+
+        <p class="text-gray-600 text-center mt-2">
+            Join Foodie today
+        </p>
+
+
+        <!-- COMPONENT 1: NAME -->
+
+        <div class="mt-8">
+
+            <label class="block font-medium mb-2">
+                Full Name
+            </label>
+
+            <input type="text"
+                   required
+                   minlength="2"
+                   placeholder="Enter your name"
+                   class="w-full border rounded-lg px-4 py-3">
+
+        </div>
+
+
+        <!-- COMPONENT 2: EMAIL -->
+
+        <div class="mt-5">
+
+            <label class="block font-medium mb-2">
+                Email
+            </label>
+
+            <input type="email"
+                   required
+                   placeholder="Enter your email"
+                   class="w-full border rounded-lg px-4 py-3">
+
+        </div>
+
+
+        <!-- COMPONENT 3: PHONE -->
+
+        <div class="mt-5">
+
+            <label class="block font-medium mb-2">
+                Phone Number
+            </label>
+
+            <input type="tel"
+                   required
+                   placeholder="Enter your phone number"
+                   class="w-full border rounded-lg px-4 py-3">
+
+        </div>
+
+
+        <!-- COMPONENT 4: PASSWORD -->
+
+        <div class="mt-5">
+
+            <label class="block font-medium mb-2">
+                Password
+            </label>
+
+            <input type="password"
+                   required
+                   minlength="6"
+                   placeholder="Create a password"
+                   class="w-full border rounded-lg px-4 py-3">
+
+        </div>
+
+
+        <!-- COMPONENT 5: CHECKBOX -->
+
+        <div class="flex items-center mt-5">
+
+            <input type="checkbox"
+                   required
+                   class="w-4 h-4">
+
+            <label class="ml-2 text-sm text-gray-600">
+                I agree to the terms and conditions
+            </label>
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button type="submit"
+                class="w-full bg-orange-600 text-white py-3 rounded-lg mt-6 hover:bg-orange-700">
+            Create Account
+        </button>
+
+
+        <!-- REQUIRED LINK -->
+
+        <p class="text-center text-gray-600 mt-6">
+
+            Already have an account?
+
+            <a href="signin.html"
+               class="text-orange-600 font-bold">
+                Sign in.
+            </a>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="bg-gray-900 text-white py-8 text-center">
+
+    <h2 class="text-xl font-bold">
+        Foodie Restaurant
+    </h2>
+
+    <p class="text-gray-400 mt-3">
+        © 2026 Foodie Restaurant.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
