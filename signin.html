@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie - Sign In</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+</head>
+
+
+<body class="bg-gray-100">
+
+
+<!-- NAVBAR -->
+
+<nav class="bg-white shadow-md">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
+
+        <a href="index.html"
+           class="text-2xl font-bold text-orange-600">
+            Foodie
+        </a>
+
+        <div class="flex gap-5">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="signup.html"
+               class="text-orange-600">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- SIGN IN -->
+
+<section class="max-w-md mx-auto px-6 py-16">
+
+    <div class="bg-white border rounded-lg shadow p-8">
+
+        <!-- COMPONENT 1: HEADING -->
+
+        <h1 class="text-3xl font-bold text-center">
+            Welcome Back
+        </h1>
+
+        <p class="text-center text-gray-600 mt-2">
+            Sign in to your Foodie account
+        </p>
+
+
+        <!-- COMPONENT 2: EMAIL INPUT -->
+
+        <div class="mt-8">
+
+            <label for="email"
+                   class="block mb-2 font-medium">
+                Email
+            </label>
+
+            <input type="email"
+                   id="email"
+                   required
+                   class="w-full border rounded-lg p-3"
+                   placeholder="Enter your email">
+
+        </div>
+
+
+        <!-- COMPONENT 3: PASSWORD INPUT -->
+
+        <div class="mt-5">
+
+            <label for="password"
+                   class="block mb-2 font-medium">
+                Password
+            </label>
+
+            <input type="password"
+                   id="password"
+                   required
+                   minlength="6"
+                   class="w-full border rounded-lg p-3"
+                   placeholder="Enter your password">
+
+        </div>
+
+
+        <!-- COMPONENT 4: CHECKBOX -->
+
+        <div class="flex items-center mt-5">
+
+            <input type="checkbox"
+                   id="remember"
+                   class="w-4 h-4">
+
+            <label for="remember"
+                   class="ml-2 text-sm text-gray-600">
+                Remember me
+            </label>
+
+        </div>
+
+
+        <!-- COMPONENT 5: BUTTON -->
+
+        <button type="submit"
+                class="w-full bg-orange-600 text-white py-3 rounded-lg mt-6 hover:bg-orange-700">
+            Sign In
+        </button>
+
+
+        <!-- COMPONENT 6: ALERT -->
+
+        <div class="p-4 mt-6 text-sm text-orange-800 bg-orange-100 rounded-lg">
+            Please enter your account details to continue.
+        </div>
+
+
+        <!-- REQUIRED LINK -->
+
+        <p class="text-center text-gray-600 mt-6">
+
+            Don't have an account?
+
+            <a href="signup.html"
+               class="text-orange-600 font-bold">
+                Sign up.
+            </a>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="bg-gray-900 text-white py-8 text-center">
+
+    <h2 class="text-xl font-bold">
+        Foodie Restaurant
+    </h2>
+
+    <p class="text-gray-400 mt-3">
+        © 2026 Foodie Restaurant.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
