@@ -1,537 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Foodie Restaurant - Home</title>
+    <title>Restaurant Management System - Lab 04</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/590/590685.png">
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-50">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="bg-white shadow-md">
+    <h1>Restaurant Management System</h1>
 
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-            <!-- Logo -->
-            <a href="index.html"
-               class="text-2xl font-bold text-orange-600">
-                Foodie
-            </a>
-
-            <!-- Navigation Links -->
-            <div class="flex gap-5">
-
-                <a href="index.html"
-                   class="text-orange-600 font-bold">
-                    Home
-                </a>
-
-                <a href="about.html"
-                   class="text-gray-700 hover:text-orange-600">
-                    About
-                </a>
-
-                <a href="contact.html"
-                   class="text-gray-700 hover:text-orange-600">
-                    Contact
-                </a>
-
-                <a href="signup.html"
-                   class="bg-orange-600 text-white px-4 py-2 rounded-lg">
-                    Sign Up
-                </a>
-
-                <a href="signin.html"
-                   class="border border-orange-600 text-orange-600 px-4 py-2 rounded-lg">
-                    Sign In
-                </a>
-
-            </div>
-
-        </div>
-
-    </nav>
+    <p class="subtitle">JavaScript Array of Objects - CRUD Operations</p>
 
 
-    <!-- HERO SECTION -->
-    <section class="bg-orange-100 py-20">
+    <!-- ================= ADD NEW ITEM ================= -->
 
-        <div class="max-w-5xl mx-auto text-center px-6">
+    <section>
 
-            <h1 class="text-5xl font-bold text-gray-900">
-                Delicious Food, Happy Moments
-            </h1>
+        <h2>Add New Menu Item</h2>
 
-            <p class="text-gray-600 text-lg mt-6">
-                Welcome to Foodie Restaurant.
-                Enjoy fresh and delicious meals with your family and friends.
-            </p>
+        <form id="menuForm">
 
-            <a href="contact.html"
-               class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg mt-8">
-                Contact Us
-            </a>
+            <input
+                type="text"
+                id="itemName"
+                placeholder="Item Name"
+                required
+            >
 
-        </div>
+            <input
+                type="text"
+                id="itemCategory"
+                placeholder="Category"
+                required
+            >
+
+            <input
+                type="number"
+                id="itemPrice"
+                placeholder="Price"
+                required
+            >
+
+            <select id="itemAvailability">
+
+                <option value="Available">Available</option>
+
+                <option value="Unavailable">Unavailable</option>
+
+            </select>
+
+            <button type="submit">Add Item</button>
+
+        </form>
 
     </section>
 
 
-    <!-- COMPONENT 1: FEATURES -->
-    <section class="max-w-6xl mx-auto px-6 py-16">
+    <!-- ================= SEARCH AND FILTERS ================= -->
 
-        <h2 class="text-3xl font-bold text-center mb-10">
-            Why Choose Us?
-        </h2>
+    <section>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <h2>Search and Filters</h2>
 
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-bold">
-                    Fresh Food
-                </h3>
+        <!-- Filter 1: Search by name -->
 
-                <p class="text-gray-600 mt-3">
-                    We use fresh and quality ingredients.
-                </p>
-            </div>
+        <input
+            type="text"
+            id="searchName"
+            placeholder="Search by item name"
+            oninput="applyFilters()"
+        >
 
 
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-bold">
-                    Fast Service
-                </h3>
+        <!-- Filter 2: Category -->
 
-                <p class="text-gray-600 mt-3">
-                    Our team provides quick and friendly service.
-                </p>
-            </div>
+        <select id="categoryFilter" onchange="applyFilters()">
 
+            <option value="All">All Categories</option>
 
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-bold">
-                    Great Taste
-                </h3>
+            <option value="Fast Food">Fast Food</option>
 
-                <p class="text-gray-600 mt-3">
-                    Enjoy delicious meals prepared by our chefs.
-                </p>
-            </div>
+            <option value="Pakistani">Pakistani</option>
 
-        </div>
+            <option value="Dessert">Dessert</option>
 
-    </section>
+            <option value="Drinks">Drinks</option>
+
+        </select>
 
 
-    <!-- COMPONENT 2: SERVICES -->
-    <section class="bg-white py-16">
+        <!-- Filter 3: Availability -->
 
-        <div class="max-w-6xl mx-auto px-6">
+        <select id="availabilityFilter" onchange="applyFilters()">
 
-            <h2 class="text-3xl font-bold text-center mb-10">
-                Our Services
-            </h2>
+            <option value="All">All Availability</option>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <option value="Available">Available</option>
 
-                <div class="border p-6 rounded-lg text-center">
-                    <h3 class="text-xl font-bold">
-                        Dine In
-                    </h3>
+            <option value="Unavailable">Unavailable</option>
 
-                    <p class="text-gray-600 mt-3">
-                        Enjoy your meal in our restaurant.
-                    </p>
-                </div>
+        </select>
 
 
-                <div class="border p-6 rounded-lg text-center">
-                    <h3 class="text-xl font-bold">
-                        Take Away
-                    </h3>
+        <!-- Filter 4: Price -->
 
-                    <p class="text-gray-600 mt-3">
-                        Take your favorite food with you.
-                    </p>
-                </div>
+        <select id="priceFilter" onchange="applyFilters()">
+
+            <option value="All">All Prices</option>
+
+            <option value="Low">Below Rs. 500</option>
+
+            <option value="Medium">Rs. 500 - Rs. 1000</option>
+
+            <option value="High">Above Rs. 1000</option>
+
+        </select>
 
 
-                <div class="border p-6 rounded-lg text-center">
-                    <h3 class="text-xl font-bold">
-                        Events
-                    </h3>
+        <!-- Filter 5: Item Type -->
 
-                    <p class="text-gray-600 mt-3">
-                        Celebrate your special events with us.
-                    </p>
-                </div>
+        <select id="typeFilter" onchange="applyFilters()">
 
-            </div>
+            <option value="All">All Item Types</option>
 
-        </div>
+            <option value="Fast Food">Fast Food Items</option>
+
+            <option value="Pakistani">Pakistani Items</option>
+
+            <option value="Dessert">Desserts</option>
+
+            <option value="Drinks">Drinks</option>
+
+        </select>
 
     </section>
 
 
-    <!-- COMPONENT 3: STATISTICS -->
-    <section class="bg-orange-600 text-white py-14">
+    <!-- ================= MENU CARDS ================= -->
 
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
+    <section>
 
-            <div>
-                <h2 class="text-4xl font-bold">
-                    500+
-                </h2>
+        <h2>Restaurant Menu</h2>
 
-                <p class="mt-2">
-                    Happy Customers
-                </p>
-            </div>
-
-
-            <div>
-                <h2 class="text-4xl font-bold">
-                    50+
-                </h2>
-
-                <p class="mt-2">
-                    Food Items
-                </p>
-            </div>
-
-
-            <div>
-                <h2 class="text-4xl font-bold">
-                    10+
-                </h2>
-
-                <p class="mt-2">
-                    Years Experience
-                </p>
-            </div>
-
-        </div>
+        <div id="menuCards"></div>
 
     </section>
 
 
-    <!-- COMPONENT 4: MENU -->
-    <section class="max-w-6xl mx-auto px-6 py-16">
+    <!-- ================= EDIT MODAL ================= -->
 
-        <h2 class="text-3xl font-bold text-center mb-10">
-            Popular Menu
-        </h2>
+    <div id="editModal" class="modal">
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="modal-content">
 
-            <div class="bg-white shadow p-6 rounded-lg">
+            <h2>Edit Menu Item</h2>
 
-                <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded">
-                    Popular
-                </span>
+            <input
+                type="text"
+                id="editName"
+                placeholder="Item Name"
+            >
 
-                <h3 class="text-xl font-bold mt-4">
-                    Burrito
-                </h3>
+            <input
+                type="text"
+                id="editCategory"
+                placeholder="Category"
+            >
 
-                <p class="text-gray-600 mt-3">
-                    Juicy burger with fresh vegetables.
-                </p>
+            <input
+                type="number"
+                id="editPrice"
+                placeholder="Price"
+            >
 
-                <p class="text-orange-600 font-bold mt-4">
-                    Rs. 800
-                </p>
+            <select id="editAvailability">
 
-            </div>
+                <option value="Available">Available</option>
 
+                <option value="Unavailable">Unavailable</option>
 
-            <div class="bg-white shadow p-6 rounded-lg">
+            </select>
 
-                <span class="bg-green-100 text-green-600 px-3 py-1 rounded">
-                    Healthy
-                </span>
+            <br><br>
 
-                <h3 class="text-xl font-bold mt-4">
-                    Fresh Salad
-                </h3>
+            <button onclick="updateItem()">Update</button>
 
-                <p class="text-gray-600 mt-3">
-                    Fresh vegetables with delicious dressing.
-                </p>
-
-                <p class="text-orange-600 font-bold mt-4">
-                    Rs. 600
-                </p>
-
-            </div>
-
-
-            <div class="bg-white shadow p-6 rounded-lg">
-
-                <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded">
-                    Special
-                </span>
-
-                <h3 class="text-xl font-bold mt-4">
-                    Creamy Pasta
-                </h3>
-
-                <p class="text-gray-600 mt-3">
-                    Delicious pasta prepared with our special recipe.
-                </p>
-
-                <p class="text-orange-600 font-bold mt-4">
-                    Rs. 900
-                </p>
-
-            </div>
+            <button onclick="closeModal()">Cancel</button>
 
         </div>
+
+    </div>
+
+
+    <!-- ================= IF ELSE SECTION ================= -->
+
+    <section>
+
+        <h2>If-Else Conditions</h2>
+
+        <div id="conditionResults"></div>
 
     </section>
 
 
-    <!-- COMPONENT 5: TESTIMONIAL -->
-    <section class="bg-gray-100 py-16">
+    <!-- ================= FOR LOOP SECTION ================= -->
 
-        <div class="max-w-3xl mx-auto px-6 text-center">
+    <section>
 
-            <h2 class="text-3xl font-bold mb-8">
-                What Our Customers Say
-            </h2>
+        <h2>For Loop Output</h2>
 
-            <div class="bg-white p-8 rounded-lg shadow">
-
-                <p class="text-gray-600 text-lg">
-                    "The food was delicious and the service was excellent."
-                </p>
-
-                <p class="font-bold mt-5">
-                    - Ramla
-                </p>
-
-            </div>
-
-        </div>
+        <div id="forLoopResults"></div>
 
     </section>
 
 
-    <!-- COMPONENT 6: HOW IT WORKS -->
-    <section class="max-w-6xl mx-auto px-6 py-16">
+    <!-- ================= WHILE LOOP SECTION ================= -->
 
-        <h2 class="text-3xl font-bold text-center mb-10">
-            How It Works
-        </h2>
+    <section>
 
-        <div class="grid md:grid-cols-3 gap-6 text-center">
+        <h2>While Loop Output</h2>
 
-            <div>
-                <div class="bg-orange-600 text-white w-12 h-12 mx-auto rounded-full flex items-center justify-center font-bold">
-                    1
-                </div>
-
-                <h3 class="text-xl font-bold mt-4">
-                    Choose Food
-                </h3>
-
-                <p class="text-gray-600 mt-2">
-                    Select your favorite meal.
-                </p>
-            </div>
-
-
-            <div>
-                <div class="bg-orange-600 text-white w-12 h-12 mx-auto rounded-full flex items-center justify-center font-bold">
-                    2
-                </div>
-
-                <h3 class="text-xl font-bold mt-4">
-                    Place Order
-                </h3>
-
-                <p class="text-gray-600 mt-2">
-                    Tell us what you want.
-                </p>
-            </div>
-
-
-            <div>
-                <div class="bg-orange-600 text-white w-12 h-12 mx-auto rounded-full flex items-center justify-center font-bold">
-                    3
-                </div>
-
-                <h3 class="text-xl font-bold mt-4">
-                    Enjoy
-                </h3>
-
-                <p class="text-gray-600 mt-2">
-                    Enjoy your delicious food.
-                </p>
-            </div>
-
-        </div>
+        <div id="whileLoopResults"></div>
 
     </section>
 
 
-    <!-- COMPONENT 7: SPECIAL OFFER -->
-    <section class="max-w-6xl mx-auto px-6 pb-16">
+    <!-- ================= LOOP + CONDITIONS ================= -->
 
-        <div class="bg-orange-100 p-10 rounded-lg text-center">
+    <section>
 
-            <h2 class="text-3xl font-bold">
-                Special Weekend Offer
-            </h2>
+        <h2>Loop with Conditions - Menu Categories</h2>
 
-            <p class="text-gray-600 mt-3">
-                Get special discounts on selected meals.
-            </p>
-
-            <button class="bg-orange-600 text-white px-6 py-3 rounded-lg mt-6">
-                View Offer
-            </button>
-
-        </div>
+        <div id="combinedResults"></div>
 
     </section>
 
 
-    <!-- COMPONENT 8: FAQ -->
-    <section class="bg-white py-16">
-
-        <div class="max-w-4xl mx-auto px-6">
-
-            <h2 class="text-3xl font-bold text-center mb-8">
-                Frequently Asked Questions
-            </h2>
-
-
-            <details class="border rounded-lg p-5 mb-4">
-
-                <summary class="font-bold cursor-pointer">
-                    Do you offer takeaway?
-                </summary>
-
-                <p class="text-gray-600 mt-3">
-                    Yes, we offer takeaway services.
-                </p>
-
-            </details>
-
-
-            <details class="border rounded-lg p-5">
-
-                <summary class="font-bold cursor-pointer">
-                    Can I make a reservation?
-                </summary>
-
-                <p class="text-gray-600 mt-3">
-                    Yes, contact us to make a reservation.
-                </p>
-
-            </details>
-
-        </div>
-
-    </section>
-
-
-    <!-- COMPONENT 9: NEWSLETTER -->
-    <section class="bg-gray-100 py-16">
-
-        <div class="max-w-3xl mx-auto px-6 text-center">
-
-            <h2 class="text-3xl font-bold">
-                Subscribe to Our Newsletter
-            </h2>
-
-            <p class="text-gray-600 mt-3">
-                Get our latest offers and updates.
-            </p>
-
-            <div class="mt-6 flex gap-3">
-
-                <input type="email"
-                       placeholder="Enter your email"
-                       class="flex-1 border rounded-lg px-4 py-3">
-
-                <button class="bg-orange-600 text-white px-6 py-3 rounded-lg">
-                    Subscribe
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- COMPONENT 10: CALL TO ACTION -->
-    <section class="bg-orange-600 text-white py-16 text-center">
-
-        <h2 class="text-3xl font-bold">
-            Ready to Enjoy Delicious Food?
-        </h2>
-
-        <p class="mt-3">
-            Contact us today.
-        </p>
-
-        <a href="contact.html"
-           class="inline-block bg-white text-orange-600 px-6 py-3 rounded-lg mt-6 font-bold">
-            Contact Us
-        </a>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white py-10">
-
-        <div class="text-center">
-
-            <h2 class="text-2xl font-bold">
-                Foodie Restaurant
-            </h2>
-
-            <div class="flex justify-center gap-6 mt-5">
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-                <a href="signup.html">
-                    Sign Up
-                </a>
-
-                <a href="signin.html">
-                    Sign In
-                </a>
-
-            </div>
-
-            <p class="text-gray-400 mt-6">
-                © 2026 Foodie Restaurant.
-            </p>
-
-        </div>
-
-    </footer>
+    <script src="script.js"></script>
 
 </body>
 
